@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI问诊 - AI问诊小医生</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- 顶部导航栏 -->
+        <div class="chat-header">
+            <div class="header-left">
+                <div class="logo-icon-small">🏥</div>
+                <h1>AI问诊小医生</h1>
+            </div>
+            <div class="header-right">
+                <span class="username">{{ username }}</span>
+                <button id="clearHistoryBtn" class="btn btn-secondary">清空历史</button>
+                <button id="logoutBtn" class="btn btn-secondary">退出登录</button>
+            </div>
+        </div>
+        
+        <!-- 对话区域 -->
+        <div class="chat-content">
+            <div id="chatMessages" class="chat-messages">
+                <div class="welcome-message">
+                    <div class="welcome-icon">👋</div>
+                    <h2>您好！我是AI医生助手</h2>
+                    <p>我可以帮您了解健康问题，提供初步的健康建议。</p>
+                    <p class="disclaimer">⚠️ 提醒：我的建议仅供参考，不能替代专业医生的诊断。如有严重症状，请及时就医。</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 输入区域 -->
+        <div class="chat-input-container">
+            <form id="chatForm" class="chat-input-form">
+                <textarea 
+                    id="messageInput" 
+                    placeholder="请描述您的症状或健康问题..." 
+                    rows="1"
+                    autocomplete="off"
+                ></textarea>
+                <button type="submit" id="sendBtn" class="btn btn-send">
+                    <span>发送</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
